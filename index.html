@@ -2,28 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>L'Oréal | Smart Routine &amp; Product Advisor</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>L'Oréal | Smart Routine & Product Advisor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script src="secrets.js"></script>
   </head>
-
   <body>
     <div class="page-wrapper">
-      <!------- Header / Branding ------->
+      <!-- Header -->
       <header class="site-header">
         <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
-        <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
+        <h1 class="site-title">Smart Routine & Product Advisor</h1>
       </header>
 
-      <!-- Category Filter -->
+      <!-- Category + Search -->
       <div class="search-section">
         <select id="categoryFilter">
           <option value="" disabled selected>Choose a Category</option>
@@ -37,9 +31,11 @@
           <option value="suncare">Suncare</option>
           <option value="fragrance">Fragrance</option>
         </select>
+        <input type="search" id="searchInput" placeholder="Search products..." />
+        <button onclick="toggleRTL()">RTL</button>
       </div>
 
-      <!-- Products Grid -->
+      <!-- Product Grid -->
       <div id="productsContainer" class="products-grid"></div>
 
       <!-- Selected Products -->
@@ -51,42 +47,26 @@
         </button>
       </div>
 
-      <!------- Chat Area ------->
+      <!-- Chat -->
       <section class="chatbox">
         <h2>Let's Build Your Routine</h2>
         <div id="chatWindow" class="chat-window"></div>
-
         <form id="chatForm" class="chat-form">
           <label for="userInput" class="visually-hidden">Message</label>
-          <input
-            id="userInput"
-            name="userInput"
-            type="text"
-            placeholder="Ask me about products or routines…"
-            autocomplete="off"
-            required
-          />
-          <button type="submit" id="sendBtn">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span class="visually-hidden">Send</span>
-          </button>
+          <input id="userInput" type="text" placeholder="Ask me about products or routines…" autocomplete="off" required />
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i><span class="visually-hidden">Send</span></button>
         </form>
       </section>
 
-      <!------- Footer Links ------->
+      <!-- Footer -->
       <footer class="site-footer">
         <p>&copy; 2025 L'Oréal. All rights reserved.</p>
         <nav>
-          <!-- These URLs are placeholders -->
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
           <a href="#">Contact</a>
         </nav>
       </footer>
     </div>
-
-    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
-    <script src="secrets.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>

@@ -253,3 +253,62 @@ body {
 .generate-btn i {
   margin-right: 8px;
 }
+
+/* Selected highlight */
+.product-card.selected {
+  border: 2px solid #ff003b;
+  background-color: #fff0f4;
+}
+
+/* Description toggle */
+.product-description {
+  font-size: 14px;
+  margin-top: 8px;
+  display: none;
+  color: #444;
+}
+.product-card.show-description .product-description {
+  display: block;
+}
+
+/* Selected product tags */
+.selected-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f2f2f2;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.selected-item button {
+  border: none;
+  background: none;
+  color: #ff003b;
+  cursor: pointer;
+}
+
+/* Chat messages */
+.chat-window .user-message {
+  text-align: right;
+  color: #000;
+  margin-bottom: 10px;
+}
+.chat-window .ai-message {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+/* RTL support */
+html[dir="rtl"] {
+  direction: rtl;
+}
+html[dir="rtl"] .products-grid,
+html[dir="rtl"] .chatbox,
+html[dir="rtl"] .selected-products {
+  text-align: right;
+}
